@@ -20,7 +20,7 @@ function mathOperation (arg1, arg2, operation) {
             return arg1 * arg2;
         default:
             return "Введена неверная операция";
-        }
+    }
 }
 
 let num1 = Number(prompt("Введите первое число"));
