@@ -5,18 +5,18 @@ let mover = {
      */
     getDirection() {
         // Доступные значения ввода.
-        const availableDirections = [2, 4, 6, 8];
+        const availableDirections = [1, 2, 3, 4, 6, 7, 8, 9]; // ****** Добавлен
 
         while (true) {
             // Получаем от пользователя направление.
-            let direction = parseInt(prompt('Введите число (2, 4, 6 или 8), куда вы хотите переместиться, "Отмена" для выхода.'));
+            let direction = parseInt(prompt('Введите число (1, 2, 3, 4, 6, 7, 8 или 9), куда вы хотите переместиться, "Отмена" для выхода.')); // ****** Добавлен
             if (isNaN(direction)) {
                 return null;
             }
             // Если направление не одно из доступных, то сообщаем что надо ввести корректные данные
             // и начинаем новую итерацию.
             if (!availableDirections.includes(direction)) {
-                alert('Для перемещения необходимо ввести одно из чисел 2, 4, 6 или 8.');
+                alert('Для перемещения необходимо ввести одно из чисел 1, 2, 3, 4, 6, 7, 8 или 9.'); // ****** Добавлен
                 continue;
             }
 
@@ -38,7 +38,15 @@ let mover = {
         };
         // Определяем направление и обновляем местоположение игрока в зависимости от направления.
         switch (direction) {
+            case 1: // ****** Добавлен
+                nextPosition.x--;
+                nextPosition.y++;
+                break;
             case 2:
+                nextPosition.y++;
+                break;
+            case 3: // ****** Добавлен
+                nextPosition.x++;
                 nextPosition.y++;
                 break;
             case 4:
@@ -47,11 +55,24 @@ let mover = {
             case 6:
                 nextPosition.x++;
                 break;
-            case 8:
+            case 7: // ****** Добавлен
+                nextPosition.x--;
+                nextPosition.y--;
+                break;
+            case 8: 
+                nextPosition.y--;
+                break;
+            case 9: // ****** Добавлен
+                nextPosition.x++;
                 nextPosition.y--;
                 break;
         }
-
+        // ****** Добавлена проверка если выходим за границы
+        if (nextPosition.y < 0 || nextPosition.y > 9 || nextPosition.x < 0 || nextPosition.x > 9) {
+            nextPosition.y = player.y;
+            nextPosition.x = player.x;
+        }
+        
         return nextPosition;
     },
 };
