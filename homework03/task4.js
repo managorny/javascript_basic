@@ -25,5 +25,6 @@ let sale = 0.15;
 products.forEach(function(item) {
     item.price = item.price - item.price * sale;
     item.sale = sale * 100;
-})
+});
+
 console.log(products);

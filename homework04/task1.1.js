@@ -16,7 +16,7 @@
 
 // Product.prototype.make25PercentDiscount = function() {
 //     this.price = this.price * 0.75;
-// }
+// };
 
 //es6
 class Product {
@@ -26,7 +26,7 @@ class Product {
     }
     make25PercentDiscount() {
         this.price = this.price * 0.75;
-    };
+    }
 }
 
 const product1 = new Product('iPhone', '15990');

@@ -12,4 +12,4 @@ xxxxx
 
 for (let ch = 'x'; x.length <= 20; ch += 'x') {
     console.log(x);
-};
+}
