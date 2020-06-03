@@ -20,7 +20,7 @@
 
 // Post.prototype.edit = function(text) {
 //     this.text = text;
-// }
+// };
 
 // function AttachedPost(author, text, date, highlighted) {
 //     Post.call(this, author, text, date);
@@ -30,14 +30,14 @@
 // AttachedPost.prototype.constructor = AttachedPost;
 // AttachedPost.prototype.makeTextHighlighted = function() {
 //     this.highlighted = true;
-// }
+// };
 
 //es6
 class Post {
     constructor(author, text, date) {
-        this.author;
-        this.text;
-        this.date;
+        this.author = author;
+        this.text = text;
+        this.date = date;
     }
     edit(text) {
         this.text = text;

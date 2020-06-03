@@ -35,19 +35,19 @@ const products = [
 ];
 
 let photoTrue = products.filter(function(el) {
-    if (el.photos != undefined && el.photos.length > 0) {
+    if (photos in products && el.photos.length > 0) {
         console.log(el.photos);
         return el;
-    };
+    }
 });
 
 photoTrue.sort(function(a, b) {
     return a.price - b.price;
-})
+});
 
 products.sort(function(a, b) {
     return a.price - b.price;
-})
+});
 
 console.log(photoTrue);
 console.log(products);
