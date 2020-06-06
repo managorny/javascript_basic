@@ -13,7 +13,6 @@ function generateChessBoard() {
     mainBoard.className = 'main-board';
     mainContainer.append(mainBoard);
     generateCellsForChessBoard(mainBoard);
-    // mainBoard.insertAdjacentHTML('afterbegin', generateCellsForChessBoard());
 };
 
 function generateCellsForChessBoard(mainBoard) {
