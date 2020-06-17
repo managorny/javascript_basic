@@ -73,47 +73,37 @@ let images = {
     },
 
     /** Берем слайд с текущим индексом и убираем у него класс
-     * hidden-slide. 
-     * Добавляем анимацию в зависимости от выбранного направления. */
-    showImageWithCurrentIdx(direction) {
+     * hidden-slide. */
+    showImageWithCurrentIdx() {
         this.slides[this.currentIdx].classList.remove('hidden-slide');
-        if (direction == 'left') {
-            this.slides[this.currentIdx].classList.add('fade-in-right');
-        } else if (direction == 'right') {
-            this.slides[this.currentIdx].classList.add('fade-in-left');
-        }
     },
 
     /** Всем слайдам добавляем класс hidden-slide. */
     hideVisibleImages() {
         this.slides.forEach(function (slide) {
             slide.classList.add('hidden-slide');
-            slide.classList.remove('fade-in-left');
-            slide.classList.remove('fade-in-right');
         });
     },
 
     /** Переключиться на предыдущее изображение. */
     setNextLeftImage() {
-        let direction = 'left';
         this.hideVisibleImages();
         if (this.currentIdx == 0) {
             this.currentIdx = this.slides.length - 1;
         } else {
             this.currentIdx--;
         }
-        this.showImageWithCurrentIdx(direction);
+        this.showImageWithCurrentIdx();
     },
 
     /** Переключиться на следующее изображение. */
     setNextRightImage() {
-        let direction = 'right';
         this.hideVisibleImages();
         if (this.currentIdx == this.slides.length - 1) {
             this.currentIdx = 0;
         } else {
             this.currentIdx++;
         }
-        this.showImageWithCurrentIdx(direction);
+        this.showImageWithCurrentIdx();
     },
 }
