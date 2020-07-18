@@ -1,0 +1,19 @@
+{
+    "name": "max-nagorny-study-js-project",
+    "scripts": {
+        "eslint": "eslint . --ext .js"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "ecmaVersion": 2017
+        },
+        "rules": {
+            "semi": ["error", "always"]
+        }
+    },
+    
+    "devDependencies": {
+        "eslint": "^7.2.0",
+        "eslint-plugin-class-property": "^1.1.0"
+    }
+}
